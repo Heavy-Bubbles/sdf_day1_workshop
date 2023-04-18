@@ -31,18 +31,34 @@ public class App {
             }
 
             if (input.startsWith("add")) {
+                //replace comma with space
+                input.replace(","," ");
+                input.toLowerCase();
+
                 Scanner scan = new Scanner(input.substring(4));
 
                 String content = "";
-                while (scan.hasNext());
-                cart.add(content);
+                while (scan.hasNext()){
+                    content = scan.next();
+
+                    if (cart.contains(content)) {
+                        System.out.println(content + " already in cart!");
+                    } else {
+                        cart.add(content);
+                        System.out.println(content + " added to cart.");         
+                }
             }
+        }
 
             if (input.equals("list")) {
                 if (cart.size() < 1) {
                     System.out.println("Your cart is empty!");
                 } else {
-                    System.out.println(cart);
+                    int i = 0;
+                    for (String item : cart) {
+                        i++;
+                        System.out.println(i + ". " + item);
+                    }
                 }
 
                 if (input.startsWith("delete")) {
@@ -56,6 +72,7 @@ public class App {
 
                         if (listIndex < cart.size()) {
                             cart.remove(listIndex);
+                            System.out.println(content + " removed from cart.");
                         } else {
                             System.err.println("Incorrect item index!");
                         }
