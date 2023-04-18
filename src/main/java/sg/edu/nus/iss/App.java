@@ -32,8 +32,7 @@ public class App {
 
             if (input.startsWith("add")) {
                 //replace comma with space
-                input.replace(","," ");
-                input.toLowerCase();
+                input.replace(',', ' ');
 
                 Scanner scan = new Scanner(input.substring(4));
 
@@ -60,15 +59,16 @@ public class App {
                         System.out.println(i + ". " + item);
                     }
                 }
+                }
 
-                if (input.startsWith("delete")) {
+            if (input.startsWith("delete")) {
                     Scanner scan = new Scanner(input.substring(6));
 
                     String content = "";
                     while (scan.hasNext()) {
                         content = scan.next();
 
-                        int listIndex = Integer.parseInt(content);
+                        int listIndex = cart.indexOf(content);
 
                         if (listIndex < cart.size()) {
                             cart.remove(listIndex);
@@ -78,7 +78,6 @@ public class App {
                         }
                     }
 
-                }
 
             }
 
