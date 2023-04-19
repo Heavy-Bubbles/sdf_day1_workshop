@@ -68,10 +68,10 @@ public class App {
                     while (scan.hasNext()) {
                         content = scan.next();
 
-                        int listIndex = cart.indexOf(content);
+                        int listIndex = Integer.parseInt(content);
 
-                        if (listIndex < cart.size()) {
-                            cart.remove(listIndex);
+                        if (listIndex <= cart.size()) {
+                            cart.remove(listIndex - 1);
                             System.out.println(content + " removed from cart.");
                         } else {
                             System.err.println("Incorrect item index!");
