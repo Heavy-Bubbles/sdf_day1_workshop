@@ -32,7 +32,7 @@ public class App {
 
             if (input.startsWith("add")) {
                 //replace comma with space
-                input.replace(',', ' ');
+                input = input.replace(',', ' ');
 
                 Scanner scan = new Scanner(input.substring(4));
 
