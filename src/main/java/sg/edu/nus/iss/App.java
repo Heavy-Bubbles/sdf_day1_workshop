@@ -71,8 +71,8 @@ public class App {
                         int listIndex = Integer.parseInt(content);
 
                         if (listIndex <= cart.size()) {
+                            System.out.println(cart.get(listIndex - 1) + " removed from cart.");
                             cart.remove(listIndex - 1);
-                            System.out.println(content + " removed from cart.");
                         } else {
                             System.err.println("Incorrect item index!");
                         }
